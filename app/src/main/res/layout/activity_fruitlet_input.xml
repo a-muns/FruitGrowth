@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FruitletInputActivity">
+
+    <TextView
+        android:id="@+id/fruitletInput_tree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:text="@string/fruitletInput_tree"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/fruitletInput_treeCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/fruitletInput_tree"
+        android:layout_marginTop="10dp"
+        android:text="PH"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/fruitletInput_cluster"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/fruitletInput_treeCount"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:text="@string/fruitletInput_cluster"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/fruitletInput_clusterCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/fruitletInput_cluster"
+        android:layout_marginTop="10dp"
+        android:text="PH"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/fruitletInput_fruit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/fruitletInput_clusterCount"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:text="@string/fruitletInput_fruit"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/fruitletInput_fruitCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/fruitletInput_fruit"
+        android:layout_marginTop="10dp"
+        android:text="PH"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/fruitletInput_btnEnterClusters"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="20dp"
+        android:text="@string/fruitletInput_enterClusters"
+        android:textSize="12dp"
+        android:maxLines="2"/>
+
+    <Button
+        android:id="@+id/fruitletInput_btnEnter"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fruitletInput_btnEnterClusters"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="20dp"
+        android:text="@string/enter" />
+
+    <EditText
+        android:id="@+id/fruitletInput_editText"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fruitletInput_tree"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/fruitletInput_btnEnter"
+        android:layout_marginLeft="20dp"
+        android:hint="PH"/>
+
+    <!-- Numeric input buttons -->
+    <!-- 7 -->
+    <Button
+        android:id="@+id/fruitletInput_btn7"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fruitletInput_editText"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="50dp"
+        android:text="7"
+        android:textSize="18dp" />
+
+    <!-- 8 -->
+    <Button
+        android:id="@+id/fruitletInput_btn8"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fruitletInput_editText"
+        app:layout_constraintStart_toEndOf="@id/fruitletInput_btn7"
+        app:layout_constraintEnd_toStartOf="@id/fruitletInput_btn9"
+        android:layout_marginTop="20dp"
+        android:text="8"
+        android:textSize="18dp" />
+
+    <!-- 9 -->
+    <Button
+        android:id="@+id/fruitletInput_btn9"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fruitletInput_editText"
+        app:layout_constraintStart_toEndOf="@id/fruitletInput_btn8"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:text="9"
+        android:textSize="18dp" />
+
+    <!-- 4 -->
+    <Button
+        android:id="@+id/fruitletInput_btn4"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fruitletInput_btn7"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="50dp"
+        android:text="4"
+        android:textSize="18dp" />
+
+    <!-- 5 -->
+    <Button
+        android:id="@+id/fruitletInput_btn5"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fruitletInput_btn7"
+        app:layout_constraintStart_toEndOf="@id/fruitletInput_btn4"
+        app:layout_constraintEnd_toStartOf="@id/fruitletInput_btn6"
+        android:layout_marginTop="20dp"
+        android:text="5"
+        android:textSize="18dp" />
+
+    <!-- 6 -->
+    <Button
+        android:id="@+id/fruitletInput_btn6"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fruitletInput_btn7"
+        app:layout_constraintStart_toEndOf="@id/fruitletInput_btn5"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:text="6"
+        android:textSize="18dp" />
+
+    <!-- 1 -->
+    <Button
+        android:id="@+id/fruitletInput_btn1"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fruitletInput_btn4"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="50dp"
+        android:text="1"
+        android:textSize="18dp" />
+
+    <!-- 2 -->
+    <Button
+        android:id="@+id/fruitletInput_btn2"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fruitletInput_btn4"
+        app:layout_constraintStart_toEndOf="@id/fruitletInput_btn1"
+        app:layout_constraintEnd_toStartOf="@id/fruitletInput_btn3"
+        android:layout_marginTop="20dp"
+        android:text="2"
+        android:textSize="18dp" />
+
+    <!-- 3 -->
+    <Button
+        android:id="@+id/fruitletInput_btn3"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fruitletInput_btn4"
+        app:layout_constraintStart_toEndOf="@id/fruitletInput_btn2"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:text="3"
+        android:textSize="18dp" />
+
+    <!-- . -->
+    <Button
+        android:id="@+id/fruitletInput_btn."
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fruitletInput_btn1"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="50dp"
+        android:text="."
+        android:textSize="18dp" />
+
+    <!-- 0 -->
+    <Button
+        android:id="@+id/fruitletInput_btn0"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fruitletInput_btn1"
+        app:layout_constraintStart_toEndOf="@id/fruitletInput_btn."
+        app:layout_constraintEnd_toStartOf="@id/fruitletInput_btnX"
+        android:layout_marginTop="20dp"
+        android:text="0"
+        android:textSize="18dp" />
+
+    <!-- X (Backspace) -->
+    <Button
+        android:id="@+id/fruitletInput_btnX"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fruitletInput_btn1"
+        app:layout_constraintStart_toEndOf="@id/fruitletInput_btn0"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:text="X"
+        android:textSize="18dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

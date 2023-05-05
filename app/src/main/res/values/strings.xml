@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">FruitGrowth</string>
+
+    <!-- Common Strings -->
+    <string name="cluster">Cluster</string>
+    <string name="fruit">Fruit</string>
+    <string name="tree">Tree</string>
+    <string name="enter">Enter</string>
+
+    <!-- VarietyActivity -->
+    <string name="variety_toolbar">Select a Variety</string>
+    <string name="variety_addVarietyBtn">Add Variety</string>
+    <string name="variety_manageFilesBtn">Manage Files</string>
+
+    <!-- AddVarietyActivity -->
+    <string name="addVariety_toolbar">Add New Variety</string>
+
+    <!-- FruitletActivity -->
+    <string name="fruitlet_toolbar"></string>
+    <string name="fruitlet_columnTree">Tree</string>
+    <string name="fruitlet_columnCluster">Cluster</string>
+    <string name="fruitlet_columnFruit">Fruit</string>
+    <string name="fruitlet_columnSize">Size (mm)</string>
+
+    <!-- FruitletInputActivity -->
+    <string name="fruitletInput_cluster">Cluster:</string>
+    <string name="fruitletInput_fruit">Fruit:</string>
+    <string name="fruitletInput_tree">Tree:</string>
+    <string name="fruitletInput_enterClusters">Enter Clusters</string>
+
+    <!-- ClusterActivity -->
+    <string name="cluster_columnCounts">Counts</string>
+
+    <!-- ManageActivity -->
+    <string name="manage_toolbar"></string>
+</resources>
