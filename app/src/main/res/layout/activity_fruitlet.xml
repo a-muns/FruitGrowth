@@ -27,6 +27,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fruitlet_varietyName"
+        android:layout_marginTop="3dp"
         android:layout_marginLeft="10dp"
         android:text="Trees PH" />
 
@@ -46,6 +47,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/fruitlet_varietyName"
         app:layout_constraintStart_toEndOf="@id/fruitlet_btnLeft"
+        android:layout_marginTop="3dp"
         android:layout_marginLeft="10dp"
         android:text="Date PH" />
 
@@ -64,6 +66,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/fruitlet_varietyName"
         app:layout_constraintStart_toEndOf="@id/fruitlet_btnRight"
+        android:layout_marginTop="3dp"
         android:layout_marginLeft="10dp"
         android:text="S PH" />
 
@@ -107,12 +110,20 @@
     <ListView
         android:id="@+id/fruitlet_listView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fruitlet_columnTree"/>
 
-    <View
-        android:id="@+id/fruitlet_view"
+    <EditText
+        android:id="@+id/testEdit"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fruitlet_listView" />
+
+    <com.example.fruitgrowth.FruitletInputActivity
+        android:id="@+id/fruitletKeyboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/testEdit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

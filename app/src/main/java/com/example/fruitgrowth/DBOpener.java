@@ -9,14 +9,37 @@ public class DBOpener extends SQLiteOpenHelper {
     /**
      * DB Constants
      */
-    protected final static String DATABASE_NAME = "NASA_DB";
+    protected final static String DATABASE_NAME = "FruitGrowth_DB";
     protected final static int VERSION_NUM = 1;
-    public final static String TABLE_NAME = "DATE_ITEM";
-    public final static String COL_ID = "_id";
-    public final static String COL_DATE = "DATE";
-    public final static String COL_TITLE = "TITLE";
-    public final static String COL_EXPLANATION = "EXPLANATION";
-    public final static String COL_IMAGE_URL = "IMAGE_URL";
+
+    // Variety Table
+    public final static String TABLE_VARIETY = "Variety";
+    public final static String VARIETY_ID = "VarietyID";
+    public final static String VARIETY_NAME = "Name";
+    public final static String VARIETY_TREECOUNT = "TreeCount";
+    public final static String VARIETY_VARIETYID_FK = "Variety_VarietyID";
+
+    // Tree Table
+    public final static String TABLE_TREE = "Tree";
+    public final static String TREE_ID = "TreeID";
+    public final static String TREE_DATE = "Date";
+    public final static String TREE_TREEID_FK = "Tree_TreeID";
+    public final static String TREE_DATE_FK = "Tree_Date";
+
+    // Fruitlet Table
+    public final static String TABLE_FRUITLET = "Fruitlet";
+    public final static String FRUITLET_ID = "FruitletID";
+    public final static String FRUITLET_TREENUMBER = "TreeNumber";
+    public final static String FRUITLET_CLUSTERNUMBER = "ClusterNumber";
+    public final static String FRUITLET_FRUITLETNUMBER = "FruitletNumber";
+    public final static String FRUITLET_SIZE = "Size";
+
+    // Cluster Table
+    public final static String TABLE_CLUSTER = "Cluster";
+    public final static String CLUSTER_ID = "ClusterID";
+    public final static String CLUSTER_TREENUMBER = "TreeNumber";
+    public final static String CLUSTER_REGION = "Region";
+    public final static String CLUSTER_COUNT = "Count";
 
     /**
      * Constructor
@@ -32,12 +55,42 @@ public class DBOpener extends SQLiteOpenHelper {
      */
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + TABLE_NAME + " ( " +
-                COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COL_DATE + " TEXT UNIQUE, " +
-                COL_TITLE + " TEXT, " +
-                COL_EXPLANATION + " TEXT, " +
-                COL_IMAGE_URL + " TEXT);");
+        db.execSQL("CREATE TABLE " + TABLE_VARIETY + " ( " +
+                VARIETY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                VARIETY_NAME + " TEXT, " +
+                VARIETY_TREECOUNT + " INTEGER);");
+
+        db.execSQL("CREATE TABLE " + TABLE_TREE + " ( " +
+                TREE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                TREE_DATE + " DATE, " +
+                VARIETY_VARIETYID_FK + " INTEGER, " +
+                " FOREIGN KEY ( " + VARIETY_VARIETYID_FK + " ) " +
+                " REFERENCES " + TABLE_VARIETY + " ( " + VARIETY_ID + " ));");
+
+        db.execSQL("CREATE TABLE " + TABLE_FRUITLET + " ( " +
+                FRUITLET_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                FRUITLET_TREENUMBER + " INTEGER, " +
+                FRUITLET_CLUSTERNUMBER + " INTEGER, " +
+                FRUITLET_FRUITLETNUMBER + " INTEGER, " +
+                FRUITLET_SIZE + " REAL, " +
+                TREE_TREEID_FK + " INTEGER, " +
+                TREE_DATE_FK + " DATE, " +
+                " FOREIGN KEY ( " + TREE_TREEID_FK + " ) " +
+                " REFERENCES " + TABLE_TREE + " ( " + TREE_TREEID_FK + " ), " +
+                " FOREIGN KEY ( " + TREE_DATE_FK + " ) " +
+                " REFERENCES " + TABLE_TREE + " ( " + TREE_DATE_FK + " ));");
+
+        db.execSQL("CREATE TABLE " + TABLE_CLUSTER + " ( " +
+                CLUSTER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                CLUSTER_TREENUMBER + " INTEGER, " +
+                CLUSTER_REGION + " TEXT, " +
+                CLUSTER_COUNT + " INTEGER, " +
+                TREE_TREEID_FK + " INTEGER, " +
+                TREE_DATE_FK + " DATE, " +
+                " FOREIGN KEY ( " + TREE_TREEID_FK + " ) " +
+                " REFERENCES " + TABLE_TREE + " ( " + TREE_TREEID_FK + " ), " +
+                " FOREIGN KEY ( " + TREE_DATE_FK + " ) " +
+                " REFERENCES " + TABLE_TREE + " ( " + TREE_DATE_FK + " ));");
     }
 
     /**

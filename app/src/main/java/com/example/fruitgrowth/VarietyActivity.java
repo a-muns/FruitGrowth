@@ -19,9 +19,9 @@ public class VarietyActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.variety_toolbar);
 
-        // TODO: Inflate listview from DB
+        // TODO: Populate ListView from DB
 
-        // TODO: Set listview onclick to startActivity(fruitletActivity.class) plus extras
+        // TODO: Set listview item onclick to startActivity(fruitletActivity.class) plus extras
 
         // Set buttons' on-clicks
         Button addVarietyBtn = findViewById(R.id.variety_btnAddVariety);
@@ -35,7 +35,7 @@ public class VarietyActivity extends AppCompatActivity {
 
             // Manage Files
         manageFilesBtn.setOnClickListener( click -> {
-            Intent manageIntent = new Intent(this, ManageActivity.class);
+            Intent manageIntent = new Intent(this, FruitletActivity.class);
             startActivity(manageIntent);
         });
 
