@@ -3,6 +3,8 @@ package com.example.fruitgrowth;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.inputmethod.EditorInfo;
@@ -10,6 +12,9 @@ import android.view.inputmethod.InputConnection;
 import android.widget.EditText;
 
 public class FruitletActivity extends AppCompatActivity {
+
+    // Globals
+    SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +41,16 @@ public class FruitletActivity extends AppCompatActivity {
         // TODO: Find a way to include an edit button in each ListView item
 
         // TODO: Update ListView with items in DB
+        public void loadFruitletData() {
+            DBOpener dbOpener = new DBOpener(this);
+            db = dbOpener.getWritableDatabase();
+
+            String[] varietyColumns = {DBOpener.VARIETY_NAME};
+            // TODO: Adjust to reflect value retrieved from variety and date
+            Cursor results = db.rawQuery("SELECT " + DBOpener.VARIETY_NAME + " FROM " + DBOpener.TABLE_VARIETY + ";", null);
+
+            // TODO: Continue this method by loading DB data into the view
+        }
 
         // TODO: Update ListView in real time (notifyDatasetChanged()) with items received from FruitletInput
 

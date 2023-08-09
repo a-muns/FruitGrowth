@@ -1,6 +1,7 @@
 package com.example.fruitgrowth;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -10,7 +11,7 @@ public class DBOpener extends SQLiteOpenHelper {
      * DB Constants
      */
     protected final static String DATABASE_NAME = "FruitGrowth_DB";
-    protected final static int VERSION_NUM = 1;
+    protected final static int VERSION_NUM = 2;
 
     // Variety Table
     public final static String TABLE_VARIETY = "Variety";
@@ -50,7 +51,7 @@ public class DBOpener extends SQLiteOpenHelper {
     }
 
     /**
-     * Create table and its columns upon DB creation
+     * Create tables and their columns upon DB creation
      * @param db
      */
     @Override
@@ -102,8 +103,15 @@ public class DBOpener extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // ** IMPORTANT: Migrate current data into new database ** (So users don't lose their data)
-
-        // Create new db
-        // onCreate(db);
+        if (newVersion > oldVersion) {
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_VARIETY);
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_TREE);
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_FRUITLET);
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_CLUSTER);
+            // Create new db
+            onCreate(db);
+        }
     }
+
+
 }
