@@ -10,6 +10,9 @@ import android.text.InputType;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.EditText;
+import android.widget.TextView;
+
+import java.util.Date;
 
 public class FruitletActivity extends AppCompatActivity {
 
@@ -40,17 +43,9 @@ public class FruitletActivity extends AppCompatActivity {
 
         // TODO: Find a way to include an edit button in each ListView item
 
-        // TODO: Update ListView with items in DB
-        public void loadFruitletData() {
-            DBOpener dbOpener = new DBOpener(this);
-            db = dbOpener.getWritableDatabase();
 
-            String[] varietyColumns = {DBOpener.VARIETY_NAME};
-            // TODO: Adjust to reflect value retrieved from variety and date
-            Cursor results = db.rawQuery("SELECT " + DBOpener.VARIETY_NAME + " FROM " + DBOpener.TABLE_VARIETY + ";", null);
+        loadFruitletData();
 
-            // TODO: Continue this method by loading DB data into the view
-        }
 
         // TODO: Update ListView in real time (notifyDatasetChanged()) with items received from FruitletInput
 
@@ -58,5 +53,55 @@ public class FruitletActivity extends AppCompatActivity {
         // https://stackoverflow.com/questions/9577304/how-can-you-make-a-custom-keyboard-in-android/45005691#45005691
 
 
+    }
+
+    // TODO: Update ListView with items in DB
+    public void loadFruitletData() {
+        DBOpener dbOpener = new DBOpener(this);
+        db = dbOpener.getWritableDatabase();
+
+        String[] varietyColumns = {DBOpener.VARIETY_NAME};
+
+
+        Cursor varietyResults = db.rawQuery("SELECT " + DBOpener.VARIETY_NAME + ", " + DBOpener.VARIETY_TREECOUNT +
+                " FROM " + DBOpener.TABLE_VARIETY + ";", null);
+        Cursor treeResults = db.rawQuery("SELECT " + DBOpener.TREE_DATE + " FROM " + DBOpener.TABLE_TREE + ";", null);
+
+        //
+        int varietyIndex = varietyResults.getColumnIndex(DBOpener.VARIETY_NAME);
+        int treeCountIndex = varietyResults.getColumnIndex(DBOpener.VARIETY_TREECOUNT);
+        String varietyName = "";
+        int treeCount = 0;
+        String treeDate = "";
+
+        while (varietyResults.moveToNext()) {
+            try {
+                varietyName = varietyResults.getString(varietyIndex);
+                treeCount = varietyResults.getInt(treeCountIndex);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        // TODO: Convert date from Tree table into date format (or leave as string?)
+//        try {
+//            treeDate = treeResults.getString(0);
+//        } catch (Exception e) {
+//                e.printStackTrace();
+//        }
+
+        // Initialize TextViews as variables
+        TextView varietyNameTextView = findViewById(R.id.fruitlet_varietyName);
+        TextView treeCountTextView = findViewById(R.id.fruitlet_treesCount);
+        TextView dateTextView = findViewById(R.id.fruitlet_date);
+
+        // Set TextViews to data retrieved from DB
+        varietyNameTextView.setText(varietyName);
+        treeCountTextView.setText(String.valueOf(treeCount));
+        dateTextView.setText(treeDate);
+
+
+
+        // TODO: Continue this method by loading DB data into the view
     }
 }
