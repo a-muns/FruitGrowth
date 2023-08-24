@@ -16,9 +16,11 @@
         android:id="@+id/addVariety_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addVariety_toolbar"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
         android:hint="Variety name" />
 
     <TextView
@@ -28,43 +30,99 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/addVariety_name"
-        android:text="Choose Number of Trees" />
+        android:text="Choose Number of Trees"
+        android:textStyle="bold" />
 
-    <RadioGroup>
-        android:id="@+id/addVariety_chooseTreesGroup"
+    <RadioGroup
+        android:id="@+id/addVariety_chooseTrees"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/addVariety_chooseTreesText"
-        android:orientation="horizontal"
+        android:orientation="horizontal">
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1" />
+            android:text="5 Trees" />
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="2" />
+            android:text="6 Trees" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7 Trees" />
     </RadioGroup>
 
     <TextView
-        android:id="@+id/addVariety_chooseRegionText"
+        android:id="@+id/addVariety_chooseTypeText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addVariety_name"
-        android:text="Choose Number of Trees" />
+        app:layout_constraintTop_toBottomOf="@id/addVariety_chooseTrees"
+        android:text="Choose Split or Full Tree"
+        android:textStyle="bold" />
+
+    <RadioGroup
+        android:id="@+id/addVariety_chooseType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addVariety_chooseTypeText"
+        android:orientation="horizontal">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Split Tree" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Full Tree" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/addVariety_notesHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addVariety_chooseType"
+        android:layout_marginLeft="20dp"
+        android:text="Fruit Growth Model Notes"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/addVariety_notesText"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/addVariety_name"
-        android:text="Choose Number of Trees" />
+        app:layout_constraintTop_toBottomOf="@id/addVariety_notesHeader"
+        android:layout_marginTop="10dp"
+        android:text="Select a Variety
+                    \nInput fruitlet size and ENTER button
+                    \nNote: Fruitlet size accuracy of 0.5mm
+                    \n(e.g., if 12 is entered 12.0 is stored,
+                    \n if 12. is entered 12.5 is stored)
+                    \n\nENTER CLUSTERS button
+                    \nInput cluster count and ENTER button
+                    \n\nADD VARIETY button
+                    \nEnter the variety name
+                    \nChoose number of trees to measure
+                    \nChoose split or full tree option
+                    \nSAVE button - save file name and settings" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addVariety_notesText"
+        android:layout_marginTop="10dp"
+        android:text="SAVE" />
 
 
 
