@@ -3,6 +3,7 @@ package com.example.fruitgrowth;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -18,17 +19,22 @@ public class FruitletActivity extends AppCompatActivity {
 
     // Globals
     SQLiteDatabase db;
+    String varietyName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fruitlet);
 
+        Intent intentReceived= getIntent();
+        varietyName = intentReceived.getStringExtra("varietyName");
+
         // Set Toolbar
         Toolbar toolbar = findViewById(R.id.fruitlet_toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Placeholder");
+        getSupportActionBar().setTitle(varietyName);
             // TODO: Set toolbar text to variety name (using extra from VarietyActivity)
+
 
         // TODO: Correctly set keyboard to the desired EditText (onClickListener?)
         EditText currentEdit = findViewById(R.id.testEdit);
@@ -67,11 +73,11 @@ public class FruitletActivity extends AppCompatActivity {
                 " FROM " + DBOpener.TABLE_VARIETY + ";", null);
         Cursor treeResults = db.rawQuery("SELECT " + DBOpener.TREE_DATE + " FROM " + DBOpener.TABLE_TREE + ";", null);
 
-        //
+        // TODO: Get correct values to populate from  (create classes to represent Fruitlet, Tree, Variety etc.?)
         int varietyIndex = varietyResults.getColumnIndex(DBOpener.VARIETY_NAME);
         int treeCountIndex = varietyResults.getColumnIndex(DBOpener.VARIETY_TREECOUNT);
         String varietyName = "";
-        int treeCount = 0;
+        int treeCount = 999;
         String treeDate = "";
 
         while (varietyResults.moveToNext()) {
@@ -91,13 +97,11 @@ public class FruitletActivity extends AppCompatActivity {
 //        }
 
         // Initialize TextViews as variables
-        TextView varietyNameTextView = findViewById(R.id.fruitlet_varietyName);
         TextView treeCountTextView = findViewById(R.id.fruitlet_treesCount);
         TextView dateTextView = findViewById(R.id.fruitlet_date);
 
         // Set TextViews to data retrieved from DB
-        varietyNameTextView.setText(varietyName);
-        treeCountTextView.setText(String.valueOf(treeCount));
+        treeCountTextView.setText((String.valueOf(treeCount) + " Trees"));
         dateTextView.setText(treeDate);
 
 

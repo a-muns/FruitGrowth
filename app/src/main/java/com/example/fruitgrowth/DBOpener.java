@@ -11,13 +11,14 @@ public class DBOpener extends SQLiteOpenHelper {
      * DB Constants
      */
     protected final static String DATABASE_NAME = "FruitGrowth_DB";
-    protected final static int VERSION_NUM = 2;
+    protected final static int VERSION_NUM = 3;
 
     // Variety Table
     public final static String TABLE_VARIETY = "Variety";
     public final static String VARIETY_ID = "VarietyID";
     public final static String VARIETY_NAME = "Name";
     public final static String VARIETY_TREECOUNT = "TreeCount";
+    public final static String VARIETY_TREETYPE = "TreeType";
     public final static String VARIETY_VARIETYID_FK = "Variety_VarietyID";
 
     // Tree Table
@@ -59,7 +60,8 @@ public class DBOpener extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE " + TABLE_VARIETY + " ( " +
                 VARIETY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 VARIETY_NAME + " TEXT, " +
-                VARIETY_TREECOUNT + " INTEGER);");
+                VARIETY_TREECOUNT + " INTEGER, " +
+                VARIETY_TREETYPE + " TEXT);");
 
         db.execSQL("CREATE TABLE " + TABLE_TREE + " ( " +
                 TREE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +

@@ -42,6 +42,7 @@ public class VarietyActivity extends AppCompatActivity {
         // TODO: Test onClick any ListView Item
         varietyListView.setOnItemClickListener((list, item, position, id) -> {
             String varietyName = varietyArray.get(position);
+            System.out.print(varietyName);
 
             // Place extra into an intent to FruitletActivity
             Intent newActivity = new Intent(this, FruitletActivity.class);
