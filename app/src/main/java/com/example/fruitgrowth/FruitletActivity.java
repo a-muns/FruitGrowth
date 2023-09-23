@@ -33,8 +33,6 @@ public class FruitletActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.fruitlet_toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(varietyName);
-            // TODO: Set toolbar text to variety name (using extra from VarietyActivity)
-
 
         // TODO: Correctly set keyboard to the desired EditText (onClickListener?)
         EditText currentEdit = findViewById(R.id.testEdit);
@@ -107,5 +105,7 @@ public class FruitletActivity extends AppCompatActivity {
 
 
         // TODO: Continue this method by loading DB data into the view
+
+        db.close();
     }
 }
