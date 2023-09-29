@@ -3,6 +3,7 @@ package com.example.fruitgrowth;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.renderscript.ScriptGroup;
 import android.text.TextUtils;
@@ -72,6 +73,11 @@ public class FruitletInputActivity extends LinearLayout implements View.OnClickL
         // and notifyDataSetChanged on fruitlet_listView
         buttonEnter.setOnClickListener(this);
         buttonEnterClusters.setOnClickListener(this);
+//        Attempting to set intent on Enter Clusters button
+//        buttonEnterClusters.setOnClickListener( click -> {
+//            Intent newActivity = new Intent(this, ClusterActivity.class);
+//            startActivity(newActivity);
+//        }
 
         // Map each button to its value
         keyValues.put(R.id.fruitletInput_btn1, "1");
@@ -117,7 +123,7 @@ public class FruitletInputActivity extends LinearLayout implements View.OnClickL
 
 // TODO: Insert values into treeCount, clusterCount, and fruitCount
 
-// TODO: enter and enterClusters update FruitletActivity with editText(with notifyDatasetChanged())
+// TODO: Enter and enterClusters update FruitletActivity with editText(with notifyDatasetChanged())
 // check editText for allowable range
 
 // TODO: Input button functionality
