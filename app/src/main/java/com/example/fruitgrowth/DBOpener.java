@@ -62,6 +62,7 @@ public class DBOpener extends SQLiteOpenHelper {
                 VARIETY_TREECOUNT + " INTEGER, " +
                 VARIETY_TREETYPE + " TEXT);");
 
+        // TODO: Date should be refactored, as one tree can have multiple dates
         db.execSQL("CREATE TABLE " + TABLE_TREE + " ( " +
                 TREE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 TREE_DATE + " DATE, " +
@@ -103,7 +104,7 @@ public class DBOpener extends SQLiteOpenHelper {
      */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // ** IMPORTANT: Migrate current data into new database ** (So users don't lose their data)
+        // TODO: ** IMPORTANT ** Migrate current data into new database (So users don't lose their data)
         if (newVersion > oldVersion) {
             db.execSQL("DROP TABLE IF EXISTS " + TABLE_VARIETY);
             db.execSQL("DROP TABLE IF EXISTS " + TABLE_TREE);

@@ -26,7 +26,7 @@ public class FruitletActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fruitlet);
 
-        Intent intentReceived= getIntent();
+        Intent intentReceived = getIntent();
         varietyName = intentReceived.getStringExtra("varietyName");
 
         // Set Toolbar
@@ -71,7 +71,7 @@ public class FruitletActivity extends AppCompatActivity {
                 " FROM " + DBOpener.TABLE_VARIETY + ";", null);
         Cursor treeResults = db.rawQuery("SELECT " + DBOpener.TREE_DATE + " FROM " + DBOpener.TABLE_TREE + ";", null);
 
-        // TODO: Get correct values to populate from  (create classes to represent Fruitlet, Tree, Variety etc.?)
+        // TODO: Get correct values to populate from (create classes to represent Fruitlet, Tree, Variety etc.?)
         int varietyIndex = varietyResults.getColumnIndex(DBOpener.VARIETY_NAME);
         int treeCountIndex = varietyResults.getColumnIndex(DBOpener.VARIETY_TREECOUNT);
         String varietyName = "";
