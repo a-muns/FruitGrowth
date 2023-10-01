@@ -27,7 +27,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="30dp"
         android:layout_marginLeft="25dp"
-        android:text="@string/variety_addVarietyBtn" />
+        android:text="@string/variety_addVarietyBtn"
+        android:backgroundTint="@color/blue" />
 
     <Button
         android:id="@+id/variety_btnManageFiles"
@@ -37,6 +38,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="30dp"
         android:layout_marginLeft="30dp"
-        android:text="@string/variety_manageFilesBtn" />
+        android:text="@string/variety_manageFilesBtn"
+        android:backgroundTint="@color/blue" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -48,7 +48,8 @@
             app:layout_constraintStart_toEndOf="@id/fruitletInput_cluster"
             android:layout_marginTop="10dp"
             android:text="PH"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:textColor="@color/red"/>
 
         <TextView
             android:id="@+id/fruitletInput_fruit"
@@ -80,7 +81,9 @@
             android:layout_marginRight="20dp"
             android:text="@string/fruitletInput_enterClusters"
             android:textSize="12dp"
-            android:maxLines="2"/>
+            android:maxLines="2"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white" />
 
         <Button
             android:id="@+id/fruitletInput_btnEnter"
@@ -89,7 +92,8 @@
             app:layout_constraintTop_toBottomOf="@id/fruitletInput_btnEnterClusters"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginRight="20dp"
-            android:text="@string/enter" />
+            android:text="@string/enter"
+            android:backgroundTint="@color/grey"/>
 
         <EditText
             android:id="@+id/fruitletInput_editText"
@@ -112,7 +116,9 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="30dp"
             android:text="7"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white" />
 
         <!-- 8 -->
         <Button
@@ -124,7 +130,9 @@
             app:layout_constraintEnd_toStartOf="@id/fruitletInput_btn9"
             android:layout_marginTop="10dp"
             android:text="8"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white" />
 
         <!-- 9 -->
         <Button
@@ -136,7 +144,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="10dp"
             android:text="9"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white" />
 
         <!-- 4 -->
         <Button
@@ -148,7 +158,9 @@
             android:layout_marginTop="5dp"
             android:layout_marginLeft="30dp"
             android:text="4"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white" />
 
         <!-- 5 -->
         <Button
@@ -160,7 +172,9 @@
             app:layout_constraintEnd_toStartOf="@id/fruitletInput_btn6"
             android:layout_marginTop="5dp"
             android:text="5"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white" />
 
         <!-- 6 -->
         <Button
@@ -172,7 +186,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="5dp"
             android:text="6"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white" />
 
         <!-- 1 -->
         <Button
@@ -184,7 +200,9 @@
             android:layout_marginTop="5dp"
             android:layout_marginLeft="30dp"
             android:text="1"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white" />
 
         <!-- 2 -->
         <Button
@@ -196,7 +214,9 @@
             app:layout_constraintEnd_toStartOf="@id/fruitletInput_btn3"
             android:layout_marginTop="5dp"
             android:text="2"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white" />
 
         <!-- 3 -->
         <Button
@@ -208,7 +228,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="5dp"
             android:text="3"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white" />
 
         <!-- . -->
         <Button
@@ -220,7 +242,9 @@
             android:layout_marginTop="5dp"
             android:layout_marginLeft="30dp"
             android:text="."
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white" />
 
         <!-- 0 -->
         <Button
@@ -232,7 +256,9 @@
             app:layout_constraintEnd_toStartOf="@id/fruitletInput_btnX"
             android:layout_marginTop="5dp"
             android:text="0"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white" />
 
         <!-- X (Backspace) -->
         <Button
@@ -244,7 +270,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="5dp"
             android:text="X"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
