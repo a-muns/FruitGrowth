@@ -93,7 +93,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginRight="20dp"
             android:text="@string/enter"
-            android:backgroundTint="@color/grey"/>
+            android:backgroundTint="@color/dark_grey"/>
 
         <EditText
             android:id="@+id/fruitletInput_editText"
